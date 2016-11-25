@@ -1,0 +1,1 @@
+they are some codes here from chapter 1 to chapter 5 in python352.chm  --date:2016/11/25
