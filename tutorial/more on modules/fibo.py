@@ -15,16 +15,11 @@ def fib2(n):
         a,b=b,a+b
     return result
 
-<<<<<<< HEAD
 
 # the code below this line is the demonstation which is show that how to be a script.
 if __name__ == "__main__":
     import sys
 
     fib(int(sys.argv[1]))
-=======
-if __name__ == '__main__':
-    import sys
-    fib(int(sys.argv[1]))
 
->>>>>>> origin/master
+
