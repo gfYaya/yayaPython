@@ -1,4 +1,5 @@
 def scope_test():
+    spam = 'test spam'
     def do_local():
         spam = "local spam"  # innermost scope
 
@@ -10,7 +11,6 @@ def scope_test():
         global spam
         spam = "global spam"
 
-    spam = 'test spam'
     do_local()
     print("After local assignment:", spam)
     do_nonlocal()
