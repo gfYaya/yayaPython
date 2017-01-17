@@ -31,7 +31,7 @@ class C(A):
 
 class D(B, C):
     def __init__(self, d):
-        super().__init__(d)
+        # super().__init__(d)
         print('D')
         self.d = d
 
