@@ -11,7 +11,6 @@ class C:
 
     h = g
 
-
 c = C()
 print(c.f(1, 2))
 print(c.h())
