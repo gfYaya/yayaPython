@@ -6,6 +6,7 @@ class BaseClass(object):
     def __init__(self, value):
         self.value = value
         print('Init BaseClass')
+        print('BaseClass', self)
         print('Value is {0}'.format(self.value))
 
 
@@ -13,6 +14,7 @@ class TimeTwo(object):
     def __init__(self):
         self.value *= 2
         print('Init TimeTwo')
+        print('TimeTwo', self)
         print('Value is {0}'.format(self.value))
 
 
@@ -20,6 +22,7 @@ class PlusFive(object):
     def __init__(self):
         self.value += 5
         print('Init PlusFive')
+        print('PlusFive', self)
         print('Value is {0}'.format(self.value))
 
 
