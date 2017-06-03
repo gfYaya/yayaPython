@@ -17,3 +17,8 @@ print(next(fib))
 print(next(fib))
 print(next(fib))
 print([next(fib) for i in range(10)])
+
+# exercise by myself
+for i in ( x*x  for x in range(10) ):
+    # this is a generator, so is the function range() in python 3.x? or an iterator?
+    print(i)
