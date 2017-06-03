@@ -32,3 +32,30 @@ def logged(klass, logger):
         element = getattr(klass, attribute)
         setattr(klass, attribute[len('__logged_'):], element)
         setattr(klass, attribute)
+
+class One(object):
+    def _private(self):
+        pass
+
+    def one(self, other):
+        self.two()
+        other.thing(self)
+        self._private()
+
+    def two(self):
+        pass
+
+class Two(object):
+    def thing(self, other):
+        other.two()
+
+calls = []
+def called(meth, args, kw):
+    calls.append(meth.im_func.func_name)
+
+with logged(One, called):
+    one = One()
+    two = Two()
+    one.one(two)
+
+calls
