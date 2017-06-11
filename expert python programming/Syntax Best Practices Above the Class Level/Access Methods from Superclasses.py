@@ -19,6 +19,7 @@ anita.says()
 # another way
 class LittleSister(Mama):
     def says(self):
+        # it's hard to be used as you face a mutiple inheritance schema
         super(LittleSister, self)
         print('and clean your bedroom')
 
