@@ -15,4 +15,11 @@ class distinctdict(dict):
         except ValueError:
             pass
 
-        super()
+        super(distinctdict, self).__setitem__(key, value)
+
+
+my = distinctdict
+my['key'] = 'value'
+# my['other_key'] = 'value' # TypeError: 'type' object does not support item assignment
+my['other_key'] = 'value2'
+print(my)
