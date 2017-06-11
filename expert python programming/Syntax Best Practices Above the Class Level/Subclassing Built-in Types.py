@@ -18,8 +18,8 @@ class distinctdict(dict):
         super(distinctdict, self).__setitem__(key, value)
 
 
-my = distinctdict
+my = distinctdict()
 my['key'] = 'value'
-# my['other_key'] = 'value' # TypeError: 'type' object does not support item assignment
+# my['other_key'] = 'value' # AttributeError: 'dict_values' object has no attribute 'index'
 my['other_key'] = 'value2'
 print(my)
