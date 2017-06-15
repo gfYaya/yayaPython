@@ -22,4 +22,4 @@ class C(A, B):
 
 print("MRO :", [x.__name__ for x in C.mro()])
 
-C()  # 为何只有B调用了两次,C不是?教练,这不科学
+C()  # 为何只有B调用了两次,C不是?教练,这不科学 =>super()函数调用的是__mro__的顺序?
