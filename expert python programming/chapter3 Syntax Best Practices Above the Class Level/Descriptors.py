@@ -13,6 +13,8 @@ class UpperString(object):
 
 class MyClass(object):
     attribute = UpperString()
+    # 将 __get__和__set__ 传递给attribute?而不是单纯的赋值?对该属性赋值,
+    # 自动变成大小写,而不是attribute = UpperString() 替换为 'my value'?
 
 
 t = MyClass()
