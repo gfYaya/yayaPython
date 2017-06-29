@@ -19,12 +19,12 @@ class Base2(BaseBase):
 
 
 class MyClass(Base1, Base2):
-    def __init__(self, args):
+    #def __init__(self):
+    def __init__(self, args):  # 为什么 这个类的init函数参数列表一定要有args?
         print("the Mro of MyClass:", MyClass.__mro__)
         print('my base')
         # super(MyClass, self).__init__()  #TypeError: __init__() missing 1 required positional argument: 'arg'
-        super(MyClass, self).__init__(args)  # TypeError: __init__() takes 1 positional argument but 2 were given
-
+        super(MyClass, self).__init__()  # TypeError: __init__() takes 1 positional argument but 2 were given
 
 
 m = MyClass(10)

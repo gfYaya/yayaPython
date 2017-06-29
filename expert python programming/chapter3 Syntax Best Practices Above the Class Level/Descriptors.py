@@ -43,3 +43,13 @@ t.new_att = 'yaya'
 print('the third test ')  # YAYA , it's uppercase now
 print('t.new_att : ', t.new_att)
 print('t.__dict__ : ', t.__dict__)
+
+class WhatEver(object):
+    def __get__(self, instance, owner):
+        return "whatever"
+
+MyClass.whatever = WhatEver()
+print("2:", t.__dict__)
+print(t.whatever)
+t.whatever = 1
+print('3:', t.__dict__)
