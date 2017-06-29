@@ -4,9 +4,15 @@ class UpperString(object):
     def __init__(self):
         self._value = ''
 
+    # we get here when someone calls x.d, and d is a UpperString instance
+    # instance = x
+    # owner = type(x)
     def __get__(self, instance, owner):
         return self._value
 
+    # we get here when someone calls x.d = val, and d is a UpperString instance
+    # instance = x
+    # value = val
     def __set__(self, instance, value):
         self._value = value.upper()
 
