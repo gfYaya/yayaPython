@@ -9,7 +9,6 @@ class Chainer(object):
         if instance is None:
             # only for instances
             return self
-
         results = []
         for method in self._methods:
             results.append(method(instance))
@@ -44,15 +43,30 @@ class TextProcessor():
         if not isinstance(self.text, list):
             if len(self.text) < 2:
                 self.text = ''
-
         self.text = [w for w in self.text if len(w) > 2]
 
 
 def logger(instance, method, results):
-    print("calling s%" % method._name_)
+    print("calling %s" % method.__name__)
     return True
 
 
 def add_sequence(name, sequence):
     # setattr(x, 'y', v) is equivalent to ``x.y = v''
-    setattr(TextProcessor, name, Chainer([getattr(TextProcessor, n) for n in sequence], logger))
+    setattr(TextProcessor, name, Chainer(
+        #  getattr(x, 'y') is equivalent to x.y.
+        [getattr(TextProcessor, n) for n in sequence], logger))
+
+
+# the function named setattr and getattr which I have used in the preceding codes are eqaul
+#   to declare a new descriptor ?
+# For exmaple in this demo, TextProcessor.name = new Chainer(...)
+
+add_sequence('simple_clean', ('split', 'treshold'))
+my = TextProcessor(' My Taylor is Rich ')
+print(my.simple_clean)
+print(my.text)
+
+add_sequence('full_work', ('normalize', 'split', 'treshold'))
+print(my.full_work)
+print(my.text)
