@@ -15,7 +15,7 @@ class SecondClass(FirstClass):
 
 
 plane_ticket = SecondClass()
-print(plane_ticket.price)  # $500  =>python 方法完全是动态绑定?
+print(plane_ticket.price)  # $500
 print(SecondClass.mro())
 print(plane_ticket.__dict__)  # a empty dictionary?
 
@@ -24,7 +24,7 @@ print(another_ticket.price_nd)  # $20
 print(another_ticket.__dict__)
 
 '''
-results : 应该是相同的方法 依据mro的顺序 后者会覆盖前者
+results : 应该是相同的方法 依据mro的顺序 后者不会覆盖前者
 目前测试的仅仅是 property函数
 其他是否都是如此 未知
 '''
