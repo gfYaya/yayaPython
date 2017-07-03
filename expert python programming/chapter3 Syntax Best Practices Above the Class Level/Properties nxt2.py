@@ -22,3 +22,9 @@ print(plane_ticket.__dict__)  # a empty dictionary?
 another_ticket = SecondClass()
 print(another_ticket.price_nd)  # $20
 print(another_ticket.__dict__)
+
+'''
+results : 应该是相同的方法 依据mro的顺序 后者会覆盖前者
+目前测试的仅仅是 property函数
+其他是否都是如此 未知
+'''
