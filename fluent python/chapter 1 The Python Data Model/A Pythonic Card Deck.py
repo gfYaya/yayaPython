@@ -22,9 +22,38 @@ class FrenchDeck:
     def __len__(self):
         return len(self._cards)
 
+    # have/make/let the instance  be iterable
     def __getitem__(self, position):
         return self._cards[position]
 
 
 beer_card = Card('7', 'diamonds')
 print(beer_card)
+
+deck = FrenchDeck()
+print(len(deck))
+
+# provides by __getitem__ method
+print(deck[0], deck[-1])
+
+from random import choice
+
+print('random', choice(deck), choice(deck))
+
+print(deck[0:3])
+print(deck[12::13])  # 12 => 'A' ,the thirteenth char
+
+# for card in deck:
+#     print(card)
+
+print("------------")
+suit_value = dict(spades=3, hearts=2, diamonds=1, clubs=0)
+
+
+def spades_high(card):
+    rank_value = FrenchDeck.ranks.index(card.rank)
+    return rank_value * len(suit_value) + suit_value[card.suit]
+
+
+for card in sorted(deck, key=spades_high):
+    print(card)
