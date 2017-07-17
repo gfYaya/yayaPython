@@ -12,6 +12,8 @@ weird_board = [['_'] * 3] * 3
 print(weird_board)  # [['_', '_', '_'], ['_', '_', '_'], ['_', '_', '_']]
 weird_board[1][2] = 'X'
 print(weird_board)  # [['_', '_', 'X'], ['_', '_', 'X'], ['_', '_', 'X']]
+# 和JS一样,引用的类型发生变化之时,生成的新容器也发生了改变,JS的五大基础类型不会触发,虽然
+#   Python都是对象类型,但是number,string都是immutable的.
 
 # a = 1
 a = "1"
