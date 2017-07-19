@@ -4,7 +4,7 @@
 
 class StrKeyDict0(dict):
     def __missing__(self, key):
-        if isinstance(key, str):
+        if isinstance(key, str):  # If str(k) is not an existing key, we’d have an infinite recursion.
             raise KeyError(key)
         return self[str(key)]
 
