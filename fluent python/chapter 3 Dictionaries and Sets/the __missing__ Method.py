@@ -19,6 +19,6 @@ class StrKeyDict0(dict):
 
 
 d = StrKeyDict0([('2', 'two'), ('4', 'four')])
-print(d['2'])  # two   => __getitem__ -> __missing__
+print(d[2])  # two   => __getitem__ -> __missing__
 print(d.get(2))  # two  => get()
-print('2' in d)  # True  => __contains__
+print(2 in d)  # True  => __contains__
