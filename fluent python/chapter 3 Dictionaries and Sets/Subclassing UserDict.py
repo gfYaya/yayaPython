@@ -5,3 +5,8 @@ is that the built-in has some implementation shortcuts that end up forcing us to
 methods that we can just inherit from UserDict with no problems.'''
 
 # Example 3-8. StrKeyDict always converts non-string keys to str—on insertion, update , and lookup.
+
+import collections
+
+
+class StrKeyDict(collections.UserDict):
