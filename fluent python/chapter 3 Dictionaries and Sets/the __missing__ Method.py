@@ -5,6 +5,7 @@
 class StrKeyDict0(dict):
     def __missing__(self, key):
         if isinstance(key, str):  # If str(k) is not an existing key, we’d have an infinite recursion.
+            print('-------------')
             raise KeyError(key)
         return self[str(key)]
 
@@ -22,3 +23,6 @@ d = StrKeyDict0([('2', 'two'), ('4', 'four')])
 print(d[2])  # two   => __getitem__ -> __missing__
 print(d.get(2))  # two  => get()
 print(2 in d)  # True  => __contains__
+
+print(d['2'])  # 未执行 __missing__
+# print(d[3])
