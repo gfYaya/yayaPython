@@ -13,6 +13,11 @@
 s = 'café'
 d = s.encode('utf-8')  # b'caf\xc3\xa9'  =>前两个是单字节的 所以不需要转换,而é 本身就是一个两个字节
 # result => 存储的是unicode（对应py3的str） print的过程中会根据默认编码进行encode后写入stdout
+''' 补充:stdout按照*nix统一风格，它其实是个文件。Python2/3对文件都有个编码，2里没指定是是ascii，
+3里是utf8，特别的，对stdout会查找环境设定、系统设置等，设定默认编码。写入文件等都是byte流，
+但是print会将str按照文件的编码进行encode.
+展示详情,参考Byte Essestials.py中的例子
+'''
 print(d)
 b = d.decode()
 print(b)
