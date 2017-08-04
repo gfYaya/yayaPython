@@ -14,5 +14,5 @@ print(bytes(header))
 
 print(struct.unpack(fmt, header))
 
-del header
+del header  # Delete references to release the memory associated with the memoryview instances.
 del img
