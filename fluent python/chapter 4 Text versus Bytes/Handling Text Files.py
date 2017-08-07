@@ -28,6 +28,6 @@ print(fp3)
 print(fp3.read())  # café  =>now ,it's right
 
 print('fp4')
-fp4 = open('cafe.txt', 'rb')
+fp4 = open('cafe.txt', 'rb')  # The 'rb' flag opens a file for reading in binary mode.
 print(fp4)
 print(fp4.read())
