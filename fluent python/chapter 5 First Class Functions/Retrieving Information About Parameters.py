@@ -2,7 +2,7 @@
 
 # Example 5-15. Function to shorten a string by clipping at a space near the desired length
 
-def clip(text, max_len=80):
+def clip(text: str, max_len: 'int>0' = 80) -> str:
     """Return text clipped at the last space before or after max_len"""
     end = None
     if len(text) > max_len:
@@ -20,6 +20,9 @@ def clip(text, max_len=80):
         end = len(text)
     return text[:end].rstrip()
 
+
+# Example 5-19. Annotated clip function
+print(clip.__annotations__)
 
 # Example 5-16. Extracting information about the function arguments
 
