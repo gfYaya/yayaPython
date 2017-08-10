@@ -42,6 +42,12 @@ print(str(sig))
 for name, params in sig.parameters.items():
     print(params.kind, ':', name, '=', params.default)
 
+# Example 5-20. Extracting annotations from the function signature
+print(sig.return_annotation)
+for param in sig.parameters.values():
+    note = repr(param.annotation).ljust(13)
+    print(note, ":", param.name, '=', param.default)
+
 
 # supplement
 def f(a, *, b):
