@@ -77,3 +77,20 @@ print(Order(joe, banana_cart, bulk_item_promo))
 long_order = [LineItem(str(item_code), 1, 1.0) for item_code in range(10)]
 print(Order(joe, long_order, large_order_promo))
 print(Order(joe, cart, large_order_promo))
+
+# Example 6-6. best_promo finds the maximum discount iterating over a list of functions
+
+# promos = [fidelity_promo, bulk_item_promo, large_order_promo]
+# def best_promo(order):
+#     """Select best discount available"""
+#     return max(promo(order) for promo in promos)
+
+
+# Example 6-7. The promos list is built by introspection of the module global namespace
+
+promos = [globals()[name] for name in globals() if name.endswith('_promo') and name != 'best_promo']
+
+
+def best_promo(order):
+    """ Select best discount available """
+    return max(promo(order) for promo in promos)
