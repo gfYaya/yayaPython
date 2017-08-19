@@ -50,6 +50,8 @@ def salesgirl(discount):
 
 # if __name__ == '__main__' :
 @salesgirl(50)
+# @salesgirl  # 证明 如果装饰器如此定义,那么必须要有 decorator()这种立即执行,装饰器函数名称后面必须要有括号,传入的第一个参数认为是
+# 装饰器的参数 ,如果不加入圆括号,则传入的第一个参数 是被装饰器修饰的函数对象
 def try_this_shirt(size):
     if size < 50:
         print('I: %d inches is too small to me' % size)
