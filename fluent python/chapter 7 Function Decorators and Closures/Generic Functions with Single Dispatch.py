@@ -33,7 +33,7 @@ def htmlize(obj):
 
 
 #   Wtf?What's the difference between singledispath decoration(generic function) with the dispatch
-# function or function overlaoding?In my opinion it's also tedious,even a little more complicated.
+# function or function overlaoding?In my opinion it's also tedious or involved,even a little more complicated.
 
 @htmlize.register(str)  # Each specialized function is decorated with @«base_function».register(«type»).
 def _(text):
