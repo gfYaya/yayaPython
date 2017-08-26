@@ -8,3 +8,11 @@ print(t2 is t1)  # True
 
 t3 = t1[:]
 print(t3 is t1)  # True
+
+# Example 8-21. String literals may create shared objects
+t1 = (1, 2, 3)
+t3 = (1, 2, 3)
+print(t3 is t1)  # False
+s1 = 'ABC'
+s2 = 'ABC'
+print(s2 is s1)  # True
